@@ -1,24 +1,47 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import Contact from "./components/Contact";
+import Init from "./components/Init";
+import Users from "./components/Users"
+import useFetch from "./hooks/FetcHook";
+
 
 function App() {
+  const { response, error, isLoading } = useFetch([]); 
+  
+  if (isLoading) {
+    return <h1>Cargando sitio...</h1>;
+  }
+  if (error) {
+    return <h1>{error.toString()}</h1>;
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <div className="container">
+        <div className="btn-group">
+          <Link to="/" className="btn btn-dark">
+            Inicio
+          </Link>
+          <Link to="/port" className="btn btn-dark">
+            Portafolio
+          </Link>
+          <Link to="/Users" className="btn btn-dark">
+            Users
+          </Link>
+        </div>
+        <br />
+        <Switch>
+          <Route path="/" exact>
+            <Init />
+          </Route>
+          <Route path="/contact">
+            <Contact />
+          </Route>
+          <Route path="/Users"><Users value={response} /></Route>
+        </Switch>
+      </div>
+    </Router>
   );
 }
 
