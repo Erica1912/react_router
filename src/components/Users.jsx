@@ -1,9 +1,6 @@
-import React, { useDebugValue } from "react";
+import React from "react";
 
-const Pokemon = (props) => {
- 
-  console.log(props.value);
-
+const Users = (props) => {
   return <div>
     {
       props.value.map((item)=>{
@@ -13,4 +10,4 @@ const Pokemon = (props) => {
   </div>;
 };
 
-export default Pokemon;
+export default Users;
