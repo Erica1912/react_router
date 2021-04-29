@@ -5,6 +5,7 @@ import Init from "./components/Init";
 import Users from "./components/Users";
 import useFetch from "./hooks/FetcHook";
 import "./asset/App.css";
+import Detail from "./components/Detail";
 
 function App() {
   const { response, error, isLoading } = useFetch([]);
@@ -29,6 +30,9 @@ function App() {
         </div>
         <br />
         <Switch>
+          <Route path="/Users/:id" exact>
+            <Detail  />
+          </Route>
           <Route path="/" exact>
             <Init />
           </Route>

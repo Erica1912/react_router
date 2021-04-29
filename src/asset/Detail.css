@@ -1,0 +1,22 @@
+.design{
+    display: flex;
+align-content: center;
+}
+
+
+  
+  .principal {
+    
+    width: 250px;
+    margin: auto;
+    
+  }
+  
+  .text {
+    width: 250px;
+    margin: auto;
+    font-size: 16px;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+    
+  }
