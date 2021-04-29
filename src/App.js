@@ -2,13 +2,13 @@ import React from "react";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import Contact from "./components/Contact";
 import Init from "./components/Init";
-import Users from "./components/Users"
+import Users from "./components/Users";
 import useFetch from "./hooks/FetcHook";
-
+import "./asset/App.css";
 
 function App() {
-  const { response, error, isLoading } = useFetch([]); 
-  
+  const { response, error, isLoading } = useFetch([]);
+
   if (isLoading) {
     return <h1>Cargando sitio...</h1>;
   }
@@ -23,9 +23,6 @@ function App() {
           <Link to="/" className="btn btn-dark">
             Inicio
           </Link>
-          <Link to="/port" className="btn btn-dark">
-            Portafolio
-          </Link>
           <Link to="/Users" className="btn btn-dark">
             Users
           </Link>
@@ -38,7 +35,9 @@ function App() {
           <Route path="/contact">
             <Contact />
           </Route>
-          <Route path="/Users"><Users value={response} /></Route>
+          <Route path="/Users">
+            <Users value={response} />
+          </Route>
         </Switch>
       </div>
     </Router>

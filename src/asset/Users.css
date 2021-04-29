@@ -1,0 +1,39 @@
+.cards {
+    padding: 20px;
+    grid-gap: 40px;
+    
+}
+
+.card {
+    background-color: #CCFFCC;
+    border-radius: 20px;
+    box-shadow: 0 0 20px rgb(black );
+}
+
+.principal {
+    position: relative;
+}
+
+img {
+    width: 35%;
+    display: block;
+    border-radius: 20px 20px 0 0;
+    margin:0px 21px 19px 20px;
+}
+
+.principal::after{
+
+}
+
+.card>.principal::after{
+
+}
+.detail{
+    padding: 10px 19px;
+}
+.detail>h3{
+    font-size: 18px;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+    
+}
