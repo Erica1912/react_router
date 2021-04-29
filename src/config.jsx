@@ -1,5 +1,5 @@
 const config = {
-    baseUrl: "http://jsonplaceholder.typicode.com/users",
+    baseUrl: "https://jsonplaceholder.typicode.com/users",
   };
   
   export default config;

@@ -29,7 +29,7 @@ import Config from "../config";
  *   );
  * }
  */
-const useFetch = ( initialValue) => {
+const useFetch = (url, initialValue) => {
   const [response, setResponse] = React.useState(initialValue);
 
   const [error, setError] = React.useState(null);
@@ -41,7 +41,7 @@ const useFetch = ( initialValue) => {
       setIsLoading(true);
 
       try {
-        const res = await fetch(`${Config.baseUrl}`);
+        const res = await fetch(`${Config.baseUrl}${url}`);
 
         const json = await res.json();
 
