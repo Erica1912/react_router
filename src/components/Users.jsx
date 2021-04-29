@@ -1,10 +1,10 @@
 import React from "react";
 import "../asset/Users.css";
 import Principal from "../img/img.png";
-import { Link } from "react-router-dom";
+//import { Link } from "react-router-dom";
 
 const Users = (props) => {
-
+  //<Link to ={`/Users/${item.id}`}  key={item.id}>{item.name}</Link>
   return (
     <div>
       {props.value.map((item) => {
@@ -13,7 +13,7 @@ const Users = (props) => {
             <div className="card">
               <div className="detail">
                 <h3 >
-                  <Link to ={`/Users/${item.id}`}  key={item.id}>{item.name}</Link>
+                 {item.name}
                 </h3>
               </div>
               <div className="principal">                
