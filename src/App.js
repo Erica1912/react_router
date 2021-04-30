@@ -1,5 +1,7 @@
 import React from "react";
+
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import Config from "./config"
 import Contact from "./components/Contact";
 import Init from "./components/Init";
 import Users from "./components/Users";
@@ -8,7 +10,7 @@ import "./asset/App.css";
 import Detail from "./components/Detail";
 
 function App() {
-  const { response, error, isLoading } = useFetch([]);
+  const { response, error, isLoading } = useFetch(Config.baseUrl);
 
   if (isLoading) {
     return <h1>Cargando sitio...</h1>;

@@ -1,5 +1,5 @@
 import React from "react";
-import Config from "../config";
+
 /**
  * Custom hook for fetching data
  * @param {string} url - Url to fetch
@@ -29,20 +29,22 @@ import Config from "../config";
  *   );
  * }
  */
-const useFetch = (initialValue) => {
+const useFetch = ( url, initialValue=[]) => {
+  
   const [response, setResponse] = React.useState(initialValue);
-
   const [error, setError] = React.useState(null);
-
-  const url = `${Config.baseUrl}`
   const [isLoading, setIsLoading] = React.useState(false);
-
+//cambiar el parametro del fetch que es la url,
+// la url viene afuera de la función
+//afuera de la función
+//afuerta de useFetch
+//
   React.useEffect(() => {
     const fetchData = async () => {
       setIsLoading(true);
 
       try {
-        const res = await fetch(`${Config.baseUrl}`);
+        const res = await fetch(url);
 
         const json = await res.json();
 
@@ -60,7 +62,7 @@ const useFetch = (initialValue) => {
     
   }, []);
 
-  return { response, error, isLoading, url };
+  return { response, error, isLoading };
 };
 
 export default useFetch;
