@@ -34,6 +34,7 @@ const useFetch = (initialValue) => {
 
   const [error, setError] = React.useState(null);
 
+  const url = `${Config.baseUrl}`
   const [isLoading, setIsLoading] = React.useState(false);
 
   React.useEffect(() => {
@@ -59,7 +60,7 @@ const useFetch = (initialValue) => {
     
   }, []);
 
-  return { response, error, isLoading };
+  return { response, error, isLoading, url };
 };
 
 export default useFetch;
